@@ -1,0 +1,17 @@
+%html
+  %body
+    %form{:name => 'input', :action => 'http://127.0.0.1:4567/', :method => 'post'}
+      .control
+        %label{:for => "username_id"}
+          Username
+        %input#username_id{:name => 'username', :type => 'text'}
+      .control
+        %label{:for => "password_id"}
+          Password
+        %input#password_id{:name => 'password', :type => 'password'}
+      .control
+        %label{:for => "card_number_id"}
+          Card Number
+        %input#card_number_id{:name => 'card_number', :type => 'text'}
+      .control
+        %input{:type => 'submit', :text => 'Go'}

@@ -1,0 +1,17 @@
+%html
+  %head
+    %title
+      Story Wall | Card Printer
+    %link{:rel => 'stylesheet', :href => 'http://www.wattrus.co.za/MinglePrinter/css/StoryWall.css'}
+  %body
+    .story-wall
+      %span.title
+        Story Wall
+      %hr
+      %span.links
+        Card Printer
+    #printable.Card
+      %textarea.title#card_title
+        = @name
+      %input.number{:type => 'text', :value => "#{@number}"}
+      %input.size{:type => 'text', :value => 'N/A'}
