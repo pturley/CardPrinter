@@ -17,7 +17,7 @@ post '/' do
   haml :home
 end
 
-get '/card_printer' do
+get '/' do
   haml :card_printer
 end
 
