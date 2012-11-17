@@ -1,0 +1,145 @@
+body {
+	background-image: url(http://www.wattrus.co.za/MinglePrinter/img/background_pattern.png);
+	font-family: Helvetica Neue, Arial;
+}
+
+hr {
+border: none;
+	border-bottom: 5px solid #333;
+}
+
+textarea {
+	border: none;
+	outline: none;
+}
+
+input[type='text'] {
+	border: none;
+	outline: none;
+}
+
+.story-wall {
+	position: relative;
+	top:  30px;
+	left: 30px;
+	width: 200px;
+}
+
+.story-wall .title{
+	color: #ffffff;
+	font-size: x-large;
+	text-align: left;
+}
+
+.story-wall .links{
+	color: #000000;
+	font-size: medium;
+}
+
+.card {
+	width: 550px;
+	height: 315px;
+	padding: 4px;
+	background-color: white;
+	color: black;
+	border: 1px #666666 solid;
+	-webkit-box-shadow: 3px 3px 5px 2px #666666;
+	box-shadow: 3px 3px 5px 2px #666666;
+}
+.cards {
+	position: absolute;
+	top:  150px;
+	left: 80px;
+}
+.first_card {
+	position: relative;
+	top:  0px;
+	left: 0px;
+}
+.second_card {
+	position: absolute;
+	top:  0px;
+	left: 555px;
+}
+.third_card {
+	position: absolute;
+	top:  320px;
+	left: 0px;
+}
+.fourth_card {
+	position: absolute;
+	top:  320px;
+	left: 555px;
+}
+.fifth_card {
+	position: absolute;
+	top:  635px;
+	left: 0px;
+}
+.sixth_card {
+	position: absolute;
+	top:  560px;
+	left: 555px;
+}
+
+.title {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	background-color: transparent;
+	font-family: Marydale;
+
+	padding: 10px;
+	padding-left: 15px;
+	height: 285px;
+	width: 80%;
+	font-size: 42pt;
+}
+.number {
+	position: absolute;
+	background-color: transparent;
+	top: 5px;
+	left: 78%;
+	text-align: right;
+	padding-left: 5px;
+	width: 20%;
+	font-size: 25pt;
+}
+.size {
+	position: absolute;
+	background-color: transparent;
+	top: 260;
+	left: 490px;
+	padding: 10px;
+	padding-left: 15px;
+	width: 15%;
+	font-size: 20pt;
+}
+
+.status {
+	position: absolute;
+	background-color: transparent;
+	top: 230;
+	left: 0px;
+	padding: 10px;
+	padding-left: 15px;
+	width: 80%;
+	font-size: 20pt;
+	display: none
+}
+@media print {
+    body * {
+        visibility:hidden;
+    } 
+    #printable, #printable * {
+        visibility:visible;
+    }
+    #printable { /* aligning the printable area */
+        position:absolute;
+        left:0;
+        top:0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+}

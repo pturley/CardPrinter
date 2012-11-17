@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Mingle Card Printer</title>
+    <link rel="stylesheet" type="text/css" href="css/StoryWall.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+      function Card(cardNumber) {
+        this.cardNumber = cardNumber;
+        this.title;
+        this.size;
+      }
+
+      function initCard(cardNumber, userName, passWord) {
+        $.ajax({
+        url: 'http://127.0.0.1:4567/',
+        data: {story: cardNumber, username: userName, password:passWord}
+        success: function(data) {
+          var card = Card(cardNumber);  
+          card.title = data[0];
+          card.size = data[1];        
+        }
+        });
+      }
+
+      function getCard(cardNumber, userName, passWord, element) {
+
+      }
+    </script>
+  </head>
+  <body>
+    <form name="input" action="http://127.0.0.1:4567/" method="get">
+      <input name="username" type="text">
+      <input name="pasword" type="password">
+      <input name="story" type="text">
+      <input type="submit" text="Go"> 
+    </form>
+  </body>
+</html>

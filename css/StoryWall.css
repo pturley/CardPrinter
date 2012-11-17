@@ -1,0 +1,109 @@
+body {
+	background-image: url(http://www.wattrus.co.za/MinglePrinter/img/background_pattern.png);
+	font-family: Helvetica Neue, Arial;
+}
+
+hr {
+border: none;
+	border-bottom: 5px solid #333;
+}
+
+textarea {
+	border: none;
+	outline: none;
+}
+
+input[type='text'] {
+	border: none;
+	outline: none;
+}
+
+.story-wall {
+	position: relative;
+	top:  30px;
+	left: 30px;
+	width: 110px;
+}
+
+.story-wall .title{
+	color: #ffffff;
+	font-size: x-large;
+}
+
+.story-wall .links{
+	color: #000000;
+	font-size: medium;
+}
+
+.card {
+	position: relative;
+	top:  10px;
+	left: 220px;
+	width: 550px;
+	height: 300px;
+	background-color: white;
+	color: black;
+	-webkit-box-shadow: 3px 3px 5px 2px #666666;
+	box-shadow: 3px 3px 5px 2px #666666;
+}
+
+.card .title {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	background-color: transparent;
+	padding: 10px;
+	padding-left: 15px;
+	height: 220px;
+	width: 80%;
+	font-size: 30pt;
+}
+
+
+.card .number {
+	position: absolute;
+	background-color: transparent;
+	top: 5	px;
+	left: 80%;
+	text-align: right;
+	padding-left: 5px;
+	width: 18%;
+	font-size: 20pt;
+}
+
+.card .size {
+	position: absolute;
+	background-color: transparent;
+	top: 230;
+	left: 490px;
+	padding: 10px;
+	padding-left: 15px;
+	width: 15%;
+	font-size: 20pt;
+}
+
+.card .status {
+	position: absolute;
+	background-color: transparent;
+	top: 230;
+	left: 0px;
+	padding: 10px;
+	padding-left: 15px;
+	width: 80%;
+	font-size: 20pt;
+}
+@media print {
+    body * {
+        visibility:hidden;
+    } 
+    #printable, #printable * {
+        visibility:visible;
+    }
+    #printable { /* aligning the printable area */
+        position:absolute;
+        left:0;
+        top:0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}
