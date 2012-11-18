@@ -10,8 +10,11 @@
       %hr
       %span.links
         Card Printer
-    #printable.Card
-      %textarea.title#card_title
-        = @name
-      %input.number{:type => 'text', :value => "#{@number}"}
-      %input.size{:type => 'text', :value => 'N/A'}
+        - @cards.each do |card|
+          #printable.Card
+            .number
+              Number:
+              = card.xpath(".//number")[0].text
+            .name
+              Title:
+              = card.xpath(".//name")[0].text
