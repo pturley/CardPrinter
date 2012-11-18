@@ -1,20 +1,14 @@
-%html
-  %head
-    %title
-      Story Wall | Card Printer
-    %link{:rel => 'stylesheet', :href => 'http://www.wattrus.co.za/MinglePrinter/css/StoryWall.css'}
-  %body
-    .story-wall
-      %span.title
-        Story Wall
-      %hr
-      %span.links
-        Card Printer
-        - @cards.each do |card|
-          #printable.Card
-            .number
-              Number:
-              = card.xpath(".//number")[0].text
-            .name
-              Title:
-              = card.xpath(".//name")[0].text
+.story-wall
+  %span.title
+    Story Wall
+  %hr
+  %span.links
+    Card Printer
+    - @cards.each do |card|
+      #printable.Card
+        .number
+          Number:
+          = card.xpath(".//number")[0].text
+        .name
+          Title:
+          = card.xpath(".//name")[0].text

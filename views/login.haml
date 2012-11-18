@@ -1,13 +1,11 @@
-%html
-  %body
-    %form{:name => 'input', :action => 'http://127.0.0.1:4567/', :method => 'post'}
-      .control
-        %label{:for => "username_id"}
-          Username
-        %input#username_id{:name => 'username', :type => 'text'}
-      .control
-        %label{:for => "password_id"}
-          Password
-        %input#password_id{:name => 'password', :type => 'password'}
-      .control
-        %input{:type => 'submit', :text => 'Go'}
+%form{:name => 'input', :action => 'http://127.0.0.1:4567/', :method => 'post'}
+  .control
+    %label{:for => "username_id"}
+      Username
+    %input#username_id{:name => 'username', :type => 'text'}
+  .control
+    %label{:for => "password_id"}
+      Password
+    %input#password_id{:name => 'password', :type => 'password'}
+  .control
+    %input{:type => 'submit', :text => 'Go'}
