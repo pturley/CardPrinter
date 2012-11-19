@@ -5,8 +5,9 @@ require 'nokogiri'
 require 'open-uri'
 
 post '/' do
+  page = "all"
   doc = Nokogiri::XML(
-    open("https://minglehosting.thoughtworks.com/mpedigree_console/api/v2/projects/mpedigree_console/cards.xml?filters[]=[Type][is][Story]&page=all", 
+    open("https://minglehosting.thoughtworks.com/mpedigree_console/api/v2/projects/mpedigree_console/cards.xml?filters[]=[Type][is][Story]&page=#{page}", 
       :http_basic_authentication=>[params[:username], params[:password]]))
 
   @cards = doc.xpath("//card")
