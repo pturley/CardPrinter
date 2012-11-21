@@ -1,27 +1,28 @@
 class Card
 
   def initialize(card_doc, estimate_field)
-    @title = card_doc.xpath(".//name")[0].text
-    @number = card_doc.xpath(".//number")[0].text
-    @estimate = ""
-
-    card_doc.xpath(".//properties/property").each do |property|
-      if property.xpath(".//name")[0].text == estimate_field
-        @estimate = property.xpath(".//value")[0].text
-        break
-      end
-    end
+    @card_doc = card_doc
+    @estimate_field = estimate_field
+    @estimate = nil
   end
 
   def title
-    @title
+    @card_doc.xpath(".//name")[0].text
   end
 
   def number
-    @number
+    @card_doc.xpath(".//number")[0].text
   end
 
   def estimate
+    unless @estimate
+      @card_doc.xpath(".//properties/property").each do |property|
+        if property.xpath(".//name")[0].text == @estimate_field
+          @estimate = property.xpath(".//value")[0].text
+          break
+        end
+      end
+    end
     @estimate
   end
 end
