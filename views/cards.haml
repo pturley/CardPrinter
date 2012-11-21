@@ -8,7 +8,10 @@
       #printable.Card
         .number
           Number:
-          = card.xpath(".//number")[0].text
+          = card.number
         .name
           Title:
-          = card.xpath(".//name")[0].text
+          = card.title
+        .estimate
+          Estimate:
+          = card.estimate
