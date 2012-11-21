@@ -8,14 +8,8 @@ border: none;
 	border-bottom: 5px solid #333;
 }
 
-textarea {
-	border: none;
-	outline: none;
-}
-
-input[type='text'] {
-	border: none;
-	outline: none;
+td.form-label {
+	text-align: right;
 }
 
 .story-wall {

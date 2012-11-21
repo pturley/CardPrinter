@@ -1,13 +1,27 @@
 %h1
   Login
+%hr
 %form{:name => 'input', :action => 'http://127.0.0.1:4567/', :method => 'post'}
-  .control
-    %label{:for => "username_id"}
-      Username
-    %input#username_id{:name => 'username', :type => 'text'}
-  .control
-    %label{:for => "password_id"}
-      Password
-    %input#password_id{:name => 'password', :type => 'password'}
-  .control
-    %input{:type => 'submit', :text => 'Go'}
+  %table
+    %tr
+      %td.form-label
+        %label{:for => "username_id"}
+          Username:
+      %td
+        %input#username_id{:name => 'username', :type => 'text'}
+    %tr
+      %td.form-label
+        %label{:for => "password_id"}
+          Password:
+      %td
+        %input#password_id{:name => 'password', :type => 'password'}
+    %tr
+      %td.form-label
+        %label{:for => "project_url_id"}
+          Project URL:
+      %td
+        %input#project_url_id{:name => 'project_url', :type => 'text'}
+    %tr
+      %td
+      %td
+        %input{:type => 'submit', :text => 'Go'}
