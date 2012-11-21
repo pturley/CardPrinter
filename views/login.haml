@@ -34,6 +34,13 @@
       %td
         %input#estimate_field_id{:name => 'estimate_field', :type => 'text'}
     %tr
+      %td.form-label
+        %label{:for => "card_numbers_id"}
+          Card Numbers to Print:
+      %td
+        %input#card_numbers_id{:name => 'card_numbers', :type => 'text'}
+        List the card numbers comma separated and leave blank for the latest 25 story cards (example: 1,2,3,4,5)
+    %tr
       %td
       %td
         %input{:type => 'submit', :text => 'Go'}
