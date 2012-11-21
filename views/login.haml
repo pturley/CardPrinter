@@ -1,46 +1,47 @@
 %h1
   Login
 %hr
-%form{:name => 'input', :action => 'http://127.0.0.1:4567/', :method => 'post'}
+%form{:name => 'input', :action => 'http://127.0.0.1:4567/get_cards', :method => 'post'}
   %table
     %tr
       %td.form-label
         %label{:for => "username_id"}
-          Username:
+          Username*:
       %td
-        %input#username_id{:name => 'username', :type => 'text'}
+        %input#username_id{:name => 'username', :type => 'text', :value => "#{session[:username]}"}
     %tr
       %td.form-label
         %label{:for => "password_id"}
-          Password:
+          Password*:
       %td
-        %input#password_id{:name => 'password', :type => 'password'}
+        %input#password_id{:name => 'password', :type => 'password', :value => "#{session[:password]}"}
     %tr
       %td.form-label
         %label{:for => "mingle_instance_url_id"}
-          Mingle Instance URL:
+          Mingle Instance URL*:
       %td
-        %input#mingle_instance_url_id{:name => 'mingle_instance_url', :type => 'text'}
+        %input#mingle_instance_url_id{:name => 'mingle_instance_url', :type => 'text', :value => "#{session[:mingle_instance_url]}"}
     %tr
       %td.form-label
         %label{:for => "project_name_id"}
-          Project Name:
+          Project Name*:
       %td
-        %input#project_name_id{:name => 'project_name', :type => 'text'}
+        %input#project_name_id{:name => 'project_name', :type => 'text', :value => "#{session[:project_name]}"}
     %tr
       %td.form-label
         %label{:for => "estimate_field_id"}
-          Estimate Field:
+          Estimate Field*:
       %td
-        %input#estimate_field_id{:name => 'estimate_field', :type => 'text'}
+        %input#estimate_field_id{:name => 'estimate_field', :type => 'text', :value => "#{session[:estimate_field]}"}
     %tr
       %td.form-label
         %label{:for => "card_numbers_id"}
           Card Numbers to Print:
       %td
-        %input#card_numbers_id{:name => 'card_numbers', :type => 'text'}
+        %input#card_numbers_id{:name => 'card_numbers', :type => 'text', :value => "#{session[:card_numbers]}"}
         List the card numbers comma separated and leave blank for the latest 25 story cards (example: 1,2,3,4,5)
     %tr
       %td
       %td
         %input{:type => 'submit', :text => 'Go'}
+* Required Field
