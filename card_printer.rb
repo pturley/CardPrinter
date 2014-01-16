@@ -3,7 +3,7 @@ require 'sinatra'
 require 'mingle4r'
 require 'nokogiri'
 require 'open-uri'
-require 'card'
+require './card'
 
 enable :sessions
 
@@ -32,13 +32,13 @@ get '/cards' do
     unless session[:card_numbers].empty?
         session[:card_numbers].split(",").map{|number| number.lstrip.rstrip}.uniq.reject(&:empty?).each do |card_number|
           doc = Nokogiri::XML(
-            open("#{session[:mingle_instance_url]}/api/v2/projects/#{session[:project_name]}/cards/#{card_number}.xml", 
+            open("#{session[:mingle_instance_url]}/api/v2/projects/#{session[:project_name]}/cards/#{card_number}.xml",
               :http_basic_authentication=>[session[:username], session[:password]]))
           @cards << Card.new(doc.xpath("//card"), session[:estimate_field])
         end
     else
       doc = Nokogiri::XML(
-        open("#{session[:mingle_instance_url]}/api/v2/projects/#{session[:project_name]}/cards.xml?filters[]=[Type][is][Story]", 
+        open("#{session[:mingle_instance_url]}/api/v2/projects/#{session[:project_name]}/cards.xml?filters[]=[Type][is][Story]",
           :http_basic_authentication=>[session[:username], session[:password]]))
       @cards = doc.xpath("//card").map{|card_doc| Card.new(card_doc, session[:estimate_field])}
     end
